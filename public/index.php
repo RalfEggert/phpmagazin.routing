@@ -6,7 +6,7 @@
  * 
  * @package    Application
  * @author     Ralf Eggert <r.eggert@travello.de>
- * @link       http://www.ralfeggert.de/
+ * @link       https://github.com/RalfEggert/phpmagazin.routing
  */
 
 /**

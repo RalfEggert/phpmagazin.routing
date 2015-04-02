@@ -1,4 +1,19 @@
+<?php
+/**
+ * Zend Framework 2 - PHP-Magazin Routing mit ZF2
+ *
+ * Beispiele für ZF2 Routing
+ *
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @link       https://github.com/RalfEggert/phpmagazin.routing
+ */
+
 return array(
+    'view_manager' => array(
+        'template_map'        => include SHOP_MODULE_ROOT . '/template_map.php',
+        'template_path_stack' => array(SHOP_MODULE_ROOT . '/view'),
+    ),
     'controllers'  => array(
         'invokables' => array(
             'Shop\\Catalogue' => 'Shop\\Controller\\CatalogueController',

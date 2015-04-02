@@ -4,15 +4,17 @@
  *
  * Beispiele für ZF2 Routing
  *
- * @package    Shop
+ * @package    Application
  * @author     Ralf Eggert <r.eggert@travello.de>
- * @link       http://www.ralfeggert.de/
+ * @link       https://github.com/RalfEggert/phpmagazin.routing
  */
+
 
 return array(
     'modules'                 => array(
         'Application',
         'ZendDeveloperTools',
+        'Shop'
     ),
     'module_listener_options' => array(
         'config_glob_paths'        => array(

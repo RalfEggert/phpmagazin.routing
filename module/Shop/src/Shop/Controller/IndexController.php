@@ -9,31 +9,32 @@
  * @link       https://github.com/RalfEggert/phpmagazin.routing
  */
 
-/**
- * namespace definition and usage
- */
-namespace Application\Controller;
+namespace Shop\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 /**
- * Index controller
+ * IndexController
  *
- * Handles the homepage and other pages
+ * Handles the IndexController requests for the Shop Module
  *
- * @package    Application
+ * @package Shop\Controller
  */
 class IndexController extends AbstractActionController
 {
+
     /**
+     * Index action for IndexController
      *
-     * Handle homepage
+     * @return ViewModel
      */
     public function indexAction()
     {
-        return new ViewModel(
-            array()
-        );
+        $viewModel = new ViewModel();
+
+        return $viewModel;
     }
+
+
 }
