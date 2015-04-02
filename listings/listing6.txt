@@ -1,0 +1,53 @@
+<?php
+return array(
+    'controllers'  => array(
+        'invokables' => array(
+            'Shop\\Catalogue' => 'Shop\\Controller\\CatalogueController',
+            'Shop\\Basket'    => 'Shop\\Controller\\BasketController',
+            'Shop\\Index'     => 'Shop\\Controller\\IndexController',
+        ),
+    ),
+    'router'       => array(
+        'routes' => array(
+            'shop' => array(
+                'type'          => 'Literal',
+                'options'       => array(
+                    'route'    => '/shop',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Shop',
+                        'controller'    => 'Index',
+                        'action'        => 'index'
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes'  => array(
+                    'controller' => array(
+                        'type'          => 'Segment',
+                        'options'       => array(
+                            'route'    => '/:controller',
+                            'constraints' => array(
+                                'controller' => 'catalogue|basket',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Catalogue',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes'  => array(
+                            'action'     => array(
+                                'type'    => 'Segment',
+                                'options' => array(
+                                    'route'    => '/:action[/:id]',
+                                    'constraints' => array(
+                                        'action' => '[a-z][a-z0-9-]*',
+                                        'id'     => '[0-9]*',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    ),
+);
