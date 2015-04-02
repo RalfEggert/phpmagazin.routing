@@ -33,103 +33,94 @@ return array(
                         'action'        => 'index'
                     ),
                 ),
-            ),
-            'shop-catalogue' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/catalogue',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Catalogue',
-                        'action'        => 'index'
+                'may_terminate' => true,
+                'child_routes'  => array(
+                    'catalogue' => array(
+                        'type'          => 'Literal',
+                        'options'       => array(
+                            'route'    => '/catalogue',
+                            'defaults' => array(
+                                'controller' => 'Catalogue',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes'  => array(
+                            'show'     => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/show',
+                                    'defaults' => array(
+                                        'action' => 'show'
+                                    ),
+                                ),
+                            ),
+                            'category' => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/category',
+                                    'defaults' => array(
+                                        'action' => 'category'
+                                    ),
+                                ),
+                            ),
+                            'offers'   => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/offers',
+                                    'defaults' => array(
+                                        'action' => 'offers'
+                                    ),
+                                ),
+                            ),
+                        ),
                     ),
-                ),
-            ),
-            'shop-catalogue-show' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/catalogue/show',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Catalogue',
-                        'action'        => 'show'
-                    ),
-                ),
-            ),
-            'shop-catalogue-category' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/catalogue/category',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Catalogue',
-                        'action'        => 'category'
-                    ),
-                ),
-            ),
-            'shop-catalogue-offers' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/catalogue/offers',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Catalogue',
-                        'action'        => 'offers'
-                    ),
-                ),
-            ),
-            'shop-basket' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/basket',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Basket',
-                        'action'        => 'index'
-                    ),
-                ),
-            ),
-            'shop-basket-send' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/basket/send',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Basket',
-                        'action'        => 'send'
-                    ),
-                ),
-            ),
-            'shop-basket-cancel' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/basket/cancel',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Basket',
-                        'action'        => 'cancel'
-                    ),
-                ),
-            ),
-            'shop-basket-add' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/basket/add',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Basket',
-                        'action'        => 'add'
-                    ),
-                ),
-            ),
-            'shop-basket-remove' => array(
-                'type'          => 'Literal',
-                'options'       => array(
-                    'route'    => '/shop/basket/remove',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Shop',
-                        'controller'    => 'Basket',
-                        'action'        => 'remove'
+                    'basket'    => array(
+                        'type'          => 'Literal',
+                        'options'       => array(
+                            'route'    => '/basket',
+                            'defaults' => array(
+                                'controller' => 'Basket',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes'  => array(
+                            'send'   => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/send',
+                                    'defaults' => array(
+                                        'action' => 'send'
+                                    ),
+                                ),
+                            ),
+                            'cancel' => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/cancel',
+                                    'defaults' => array(
+                                        'action' => 'cancel'
+                                    ),
+                                ),
+                            ),
+                            'add'    => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/add',
+                                    'defaults' => array(
+                                        'action' => 'add'
+                                    ),
+                                ),
+                            ),
+                            'remove' => array(
+                                'type'    => 'Literal',
+                                'options' => array(
+                                    'route'    => '/remove',
+                                    'defaults' => array(
+                                        'action' => 'remove'
+                                    ),
+                                ),
+                            ),
+                        ),
                     ),
                 ),
             ),
