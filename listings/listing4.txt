@@ -1,0 +1,25 @@
+return array(
+    'controllers'  => array(
+        'invokables' => array(
+            'Shop\\Catalogue' => 'Shop\\Controller\\CatalogueController',
+        ),
+    ),
+    'router'       => array(
+        'routes' => array(
+            'shop' => array(
+                'type'         => 'Segment',
+                'options'      => array(
+                    'route'    => '/shop/catalogue[/:action]',
+                    'constraints' => array(
+                        'action' => '[a-z][a-z0-9-]*',
+                    ),
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Shop',
+                        'controller'    => 'Catalogue',
+                        'action'        => 'index'
+                    ),
+                ),
+            ),
+        ),
+    ),
+);
